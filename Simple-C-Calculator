@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* * Proje: Basit Hesap Makinesi
+ * Fonksiyon: +, -, *, / islemlerini double hassasiyetiyle yapar.
+ * Teknik: switch-case ve hata denetimi (default case) kullanilmistir.
+ */
+
+int main(int argc, char *argv[]) {
+	
+    double s1,s2;
+    char islem;
+    
+    printf("HESAP MAKINESI\n\n");
+    printf("Hangi islemi yapmak istersiniz?: ");
+    scanf("%c",&islem);
+    
+	printf("\n");
+	
+    printf("1. sayiyi girin: ");
+    scanf("%lf",&s1);
+    
+    printf("2. sayiyi girin: ");
+    scanf("%lf",&s2);
+    
+    printf("\n");
+    
+    switch(islem)
+{
+	case'+':
+		printf("Cevabiniz: %.2f",s1+s2);
+		break;
+	case'-':
+	    printf("Cevabiniz: %.2f",s1-s2);
+		break;
+	case'*':
+		printf("Cevabiniz: %.2f",s1*s2);
+		break;
+	case'/':
+		printf("Cevabiniz: %.2f",s1/s2);
+		break;
+	default:
+		printf("Hata... Geçersiz bir operator girdiniz.");
+}
+
+	return 0;
+}
