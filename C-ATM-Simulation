@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main(int argc, char *argv[]) {
+
+    int secim;
+    double bakiye=500,miktar;
+    
+    printf("-----ATM-----\n\n");
+    printf("Mevcut bakiyeniz: %.2f TL\n\n",bakiye);
+    
+    printf("1- Para Cekme\n");
+    printf("2- Para Yatirma\n");
+    printf("3- Bakiye Sorgulama\n");
+    printf("4- Cikis\n");
+    printf("*******************************\n");
+    printf("Lutfen yapmak istediginiz islemi secin: ");
+    scanf("%d",&secim);
+    printf("\n");
+    switch(secim)
+    {
+    	case 1:
+    		printf("Cekmek istediginiz tutari girin: ");
+    		scanf("%lf",&miktar);
+    		
+    		if(miktar>bakiye)
+    		{
+    			printf("Yetersiz Bakiye! Mevcut Bakiyeniz: %.2f TL\n",bakiye);
+			}
+			else if(miktar<=0)
+			   {
+				 printf("Geçersiz tutar girdiniz.\n");
+				 }
+			else 
+			{
+				bakiye-=miktar;
+				printf("Yeni bakiyeniz: %.2f TL\n",bakiye);
+				 }	 
+			break;
+		case 2:
+			printf("Yatirmak istediginiz tutari girin: ");
+			scanf("%lf",&miktar);
+			
+			if(miktar>0)
+			{
+				bakiye+=miktar;
+				printf("Yeni bakiyeniz: %.2f TL\n",bakiye);
+				 }	 
+			else
+			{
+				printf("Gecersiz tutar!\n");
+				 }	 
+			break;
+				 
+		case 3:
+			printf("Bakiyeniz: %.2f TL\n",bakiye);
+			break;
+		case 4:
+			printf("Iyi gunler dileriz:)\n");
+			break;
+		default:
+			printf("Geçersiz bir secim yaptiniz.\n");
+			break;	 
+				 
+	}
+
+
+	return 0;
+}
